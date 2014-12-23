@@ -11,11 +11,8 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 		<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.min.css">
 		<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.css">
 		<!--LLamando Archivo CSS-->
-
-		<link rel = "stylesheet" type = "text/css" href="css/styles.css">
-   
-    </head>
-    
+		<link rel = "stylesheet" type = "text/css" href="css/styles.css">  
+    </head>    
     <body>
 		<!-- Configuracion del panel de filtros de busqueda y botones-->
 		<nav class="navbar navbar-inverse" role="navigation" >
@@ -68,14 +65,18 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
    								<h3 class="panel-title">Videos Channel</h3>
   							</div>
 	 			 			<div class="panel-body">	
-	 			 				 <div data-bind="foreach: model.items"> 
-            						<iframe data-bind="attr: {src: 'http://www.youtube.com/embed/' + id.videoId}" width="300" height="300"></iframe>
-		     						<p data-bind = "text: snippet.title"></p>
-		     						<img data-bind = "attr:{src:snippet.tumbnails.default.url}"/>
-	     						</div>
+	 			 				 <div class="panel-body">
+							<!--Lista de videos-->
+									<ul data-bind="foreach: model.items" class="results">
+									<li class="eachResult" data-bind="click:function(){$('.videoContent').empty();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}">
+									<p data-bind = "text: snippet.title"></p>
+									<img data-bind="attr:{src: snippet.thumbnails.default.url}" />
+									</li>
+									</ul>
 	           				</div>
 		           		</div>
-		           	</div>	 
+		           	</div>	
+		          </div>	 
 		        <!--Video-->
 					<div class="col-md-8">
  			 		 	<div class="panel panel-default">
