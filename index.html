@@ -17,93 +17,87 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 		<!-- Configuracion del panel de filtros de busqueda y botones-->
 		<nav class="navbar navbar-inverse" role="navigation" >
   			<div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-   			 <div class="navbar-header" class="responsive">
-     			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-      			</button>
-    		  	<a class="navbar-brand" href="#">Home</a>
-   			 </div>
-      <ul class="nav navbar-nav navbar-right">
-   		<li class="dropdown">
-	        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filtres<span class="caret"></span></a>
-	        	 <ul class="dropdown-menu" role="menu">
-	            	<li><a href="#">Action</a></li>
-	            	<li><a href="#">Another action</a></li>
-	            	<li><a href="#">Something else here</a></li>
-	           		 <li class="divider"></li>
-	            	<li><a href="#">Separated link</a></li>
-	          	</ul>
-	     </li>
-	   	<form class="navbar-form navbar-left" role="search">
-        	<div class="form-group">
-          		<input type="text" class="form-control" placeholder="Search">
-        	</div>
-        		<button type="submit" class="btn btn-default">Submit</button>
-      	</form>
-     </ul>
-  </div><!-- /.navbar-collapse --> 
-</nav>
-	<div class="jumbotron">
- 		  <div class="container">
- 		  	<div class="row">
- 		  		<div class="col-md-8">
- 		 			 <img src="http://elpoderdelasideas.com/wp-content/uploads/Vevo-logo-2013.png" class="img-responsive">
- 		 		</div>
- 		 	</div>
- 		</div>
- 	</div>	
-			<!-- Lista de videos del canal--> 	
-			<div class="container">			
-				<div class="row">
-					<div class="col-md-4">
- 			 		 	<div class="panel panel-default">
- 							<div class="panel-heading">
-   								<h3 class="panel-title">Videos Channel</h3>
-  							</div>
-	 			 			<div class="panel-body">	
-	 			 				 <div class="panel-body">
-							<!--Lista de videos-->
-									<ul data-bind="foreach: model.items" class="results">
-									<li class="eachResult" data-bind="click:function(){$('.videoContent').empty();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}">
+    	<!-- Brand and toggle get grouped for better mobile display -->
+	   			 <div class="navbar-header" class="responsive">
+	     			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+	      			</button>
+	    		  	<a class="navbar-brand" href="#">Home</a>
+	   			 </div>
+			    <ul class="nav navbar-nav navbar-right">
+			   		<li class="dropdown">
+				        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filtres<span class="caret"></span></a>
+				        	 <ul class="dropdown-menu" role="menu">
+				            	<li><a href="#">Action</a></li>
+				            	<li><a href="#">Another action</a></li>
+				            	<li><a href="#">Something else here</a></li>
+				           		 <li class="divider"></li>
+				            	<li><a href="#">Separated link</a></li>
+				          	</ul>
+				     </li>
+				   	<form class="navbar-form navbar-left" role="search">
+			        	<div class="form-group">
+			          		<input type="text" class="form-control" placeholder="Search">
+			        	</div>
+			        		<button type="submit" class="btn btn-default">Submit</button>
+			      	</form>
+		     	</ul>
+		  	</div><!-- /.navbar-collapse --> 
+		</nav>
+		<div class="jumbotron">
+	 		  <div class="container">
+	 		  	<div class="row">
+	 		  		<div class="col-md-8">
+	 		 			 <img src="http://elpoderdelasideas.com/wp-content/uploads/Vevo-logo-2013.png" class="img-responsive">
+	 		 		</div>
+	 		 	</div>
+	 		</div>
+	 	</div>	
+		<!--List of the filtered videos-->
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Video channel</h3>
+						</div>
+						<div class="panel-body">
+							<!--Knockout showing data-->
+							<ul data-bind="foreach: model.items" class="results">
+								<li class="eachResult" data-bind="click:function(){$('.videoContent').empty();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}">
 									<p data-bind = "text: snippet.title"></p>
 									<img data-bind="attr:{src: snippet.thumbnails.default.url}" />
-									</li>
-									</ul>
-	           				</div>
-		           		</div>
-		           	</div>	
-		          </div>	 
-		        <!--Video-->
-					<div class="col-md-8">
- 			 		 	<div class="panel panel-default">
- 							 <div class="panel-heading">
-   								 <h3 class="panel-title">Video</h3>
-  							</div>
-		 			 			 <div class="panel-body">
-		 			 			 	<div class="contenido ">
-		 			 			 		
-		 			 			 	</div>
-		 			 			 </div>
-		 			 	</div>
-		 			</div>	
-		 		</div>		 		
-		 </div>		 		
-		<nav class="navbar navbar-default navbar-fixed-footer">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--End of the list-->
+				<!--Displaying results-->
+				<div class="col-md-8">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Video</h3>
+						</div>
+						<div class="panel-body">
+						<div class="Contenido"></div>
+						</div>
+					</div>
+				</div>
+				<!--End displaying results-->		 		
+		<!--nav class="navbar navbar-default navbar-fixed-footer">
   			<div class="container">
     			<h2>Created by Oscar Cortez </h2>
 			</div>
-		</nav>   						
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>   				
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="bootstrap/js/npm.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
-	<script src="js/knockout-2.2.0.js"></script>
-	<script src="js/knockout.mapping-latest.js"></script>
-
+		</nav-->   						
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  				
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="bootstrap/js/npm.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
+		<script src="js/knockout-2.2.0.js"></script>
+		<script src="js/knockout.mapping-latest.js"></script>
     </body>
+</html>
