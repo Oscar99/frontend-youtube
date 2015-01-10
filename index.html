@@ -12,6 +12,7 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 		<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.css">
 		<!--LLamando Archivo CSS-->
 		<link rel = "stylesheet" type = "text/css" href="css/styles.css">  
+		
     </head>    
     <body>
 		<!-- Configuracion del panel de filtros de busqueda y botones-->
@@ -31,11 +32,10 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 			   		<li class="dropdown">
 				        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Filtres<span class="caret"></span></a>
 				        	 <ul class="dropdown-menu" role="menu">
-				            	<li><a href="#">Action</a></li>
-				            	<li><a href="#">Another action</a></li>
-				            	<li><a href="#">Something else here</a></li>
-				           		 <li class="divider"></li>
-				            	<li><a href="#">Separated link</a></li>
+				            	 <li><a href="#" data-bind='click: sortByViews'>More Views</a></li>
+					            <li><a href="#" data-bind='click: sortByLikes'>More Likes</a></li>
+								<li><a href="#" data-bind='click: sortByComments'>Number of Comments</a></li>
+					            <li><a href="#" data-bind= 'click: sortByName'>Sorted (A-Z)</a></li>
 				          	</ul>
 				     </li>
 				   	<form class="navbar-form navbar-left" role="search">
@@ -63,37 +63,38 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 							<h3 class="panel-title">Video channel</h3>
 						</div>
 						<div class="panel-body">
-							<!--Knockout showing data-->
-							<ul data-bind="foreach: model.items" class="results">
-								<li class="eachResult" data-bind="click:function(){$('.videoContent').empty();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}">
-									<p data-bind = "text: snippet.title"></p>
-									<img data-bind="attr:{src: snippet.thumbnails.default.url}" />
-								</li>
-							</ul>
+						
+	       						 
+								<ul data-bind="foreach: model.items" class="results">
+									<li class="eachResult" data-bind="click:function(){$('.videoContent').empty();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}">
+										<p data-bind = "text: snippet.title"></p>
+										<img data-bind="attr:{src: snippet.thumbnails.default.url}" />
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!--End of the list-->
-				<!--Displaying results-->
-				<div class="col-md-8">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Video</h3>
-						</div>
-						<div class="panel-body">
-						<div class="videoContent"></div>
+					<!--End of the list-->
+					<!--Displaying results-->
+					<div class="col-md-8">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Video</h3>
+							</div>
+							<div class="panel-body">
+							<div class="videoContent"></div>
+							</div>
 						</div>
 					</div>
+					<!--End displaying results-->		 		
+			<!--nav class="navbar navbar-default navbar-fixed-footer">
+	  			<div class="container">
+	    			<h2>Created by Oscar Cortez </h2>
 				</div>
-				<!--End displaying results-->		 		
-		<!--nav class="navbar navbar-default navbar-fixed-footer">
-  			<div class="container">
-    			<h2>Created by Oscar Cortez </h2>
-			</div>
-		</nav-->   						
+			</nav-->   						
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  				
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-		<!--script type="text/javascript" src="bootstrap/js/npm.js"></script-->
+		<script type="text/javascript" src="bootstrap/js/npm.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
