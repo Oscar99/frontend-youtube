@@ -11,7 +11,10 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 		<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.min.css">
 		<link rel = "stylesheet" type = "text/css" href="bootstrap/css/bootstrap-theme.css">
 		<!--LLamando Archivo CSS-->
-		<link rel = "stylesheet" type = "text/css" href="css/styles.css">  
+		<link rel = "stylesheet" type = "text/css" href="css/styles.css"> 
+		<!--Archivos Kendo -->
+		<link href="Kendo/kendo.common.min.css" rel="stylesheet">
+		<link href="Kendo/kendo.silver.min.css" rel="stylesheet"> 
 		
     </head>    
     <body>
@@ -47,36 +50,47 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 		     	</ul>
 		  	</div><!-- /.navbar-collapse --> 
 		</nav>
+		<div class="navbar navbar-inverse navbar-fixed-bottom" >
+			<div class="container">
+				<p class="navbar-text pull-left">Created By : Oscar Cortez </p>
+				<a href="https://github.com/Oscar99" target="blank" class="navbar-btn btn-info btn pull-right">Look my Github</a>
+			</div>
+		</div>	
 		<div class="jumbotron">
 	 		  <div class="container">
 	 		  	<div class="row">
 	 		  		<div class="col-md-8">
-	 		 			 <img src="http://elpoderdelasideas.com/wp-content/uploads/Vevo-logo-2013.png" class="img-responsive">
+	 		 			 <img src="http://www.publimetro.cl/holasoygerman/German01.jpg" class="img-responsive">
 	 		 		</div>
 	 		 	</div>
 	 		</div>
 	 	</div>	
 		<!--List of the filtered videos-->
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">Video channel</h3>
 						</div>
 						<div class="panel-body">
-						
+
+							<div data-bind="kendoGrid: gridOptions"></div>
+					        <script id="rowTmpl" type="text/html">
+					            <tr data-bind="click:function() {$('.videoContent').empty(); $('.videoContent').slideUp();  $('.videoContent').slideDown();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'http://www.youtube.com/embed/'+ids+'\' frameborder=\'0\' allowfullscreen></iframe>')}">
+					                <td data-bind="text: name"></td>
+					                <td> <img width="100px" height="100px" data-bind="attr:{src: images}" /></td>
+									<td data-bind="text: view"></td>
+									<td data-bind="text: like"></td>
+									<td data-bind="text: comment"></td>
+					            </tr>
+					        </script>						
 	       						 
-								<ul data-bind="foreach: model.items" class="results">
-									<li class="eachResult" data-bind="click:function(){$('.videoContent').empty();$('.videoContent').append('<iframe width=\'560\' height=\'315\' src=\'https://www.youtube.com/embed/'+id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}">
-										<p data-bind = "text: snippet.title"></p>
-										<img data-bind="attr:{src: snippet.thumbnails.default.url}" />
-									</li>
-								</ul>
+								
 							</div>
 						</div>
 					</div>
 					<!--End of the list-->
 					<!--Displaying results-->
-					<div class="col-md-8">
+					<div class="col-md-6">
 						<div class="panel panel-default">
 							<div class="panel-heading">
 								<h3 class="panel-title">Video</h3>
@@ -85,20 +99,13 @@ la estructura correta y guardar TODO tu CSS en el archivo styles.css
 							<div class="videoContent"></div>
 							</div>
 						</div>
-					</div>
-					<!--End displaying results-->		 		
-			<!--nav class="navbar navbar-default navbar-fixed-footer">
-	  			<div class="container">
-	    			<h2>Created by Oscar Cortez </h2>
-				</div>
-			</nav-->   						
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  				
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="bootstrap/js/npm.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
-		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
-		<script src="js/knockout-2.2.0.js"></script>
-		<script src="js/knockout.mapping-latest.js"></script>
+					</div>						
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/knockout-3.2.0.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<script src="Kendo/kendo.all.min.js"></script>
+		<script src="Kendo/knockout-kendo.min.js"></script>
+		<script src="js/script.js"></script>
     </body>
 </html>
