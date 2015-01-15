@@ -7,4 +7,6 @@ Deben cumplir con los siguientes elementos:
 2. El usuario debe poder ver los videos de youtube de un canal
 3. El usuario debe poder filtrar los videos del canal por: mas visto (menos visto), mejor rating (peor rating), alfabetico.
 4. SE DEBEN ENFOCAR EN HACER SOLO LO QUE SE PIDE. Si quieren agregarle cosas adicionales DESPUES de terminar lo pedido, pueden hacerlo en otra "branch de git".
-5. El sitio se debe ver bien en computadora y en celular.
+5. El sitio se debe ver bien en computadora y en celular. 
+6. Ver Pagina   http://oscar99.github.io/frontend-youtube.
+
